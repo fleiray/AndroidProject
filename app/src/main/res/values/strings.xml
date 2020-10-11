@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Assignment 2</string>
+    <string name="app_name">Assignment 1</string>
     <string name="hello_message">Hello World!</string>
     <string name="Button_Text">I\'m a button</string>
     <string name="login_Text"> login</string>

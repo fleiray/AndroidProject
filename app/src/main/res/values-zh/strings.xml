@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">作业 2</string>
+    <string name="app_name">作业 1</string>
     <string name="hello_message">你好世界</string>
     <string name="Button_Text">我是一个按钮</string>
     <string name="login_Text"> 登录</string>

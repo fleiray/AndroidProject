@@ -4,14 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 public class ListItemsActivity extends AppCompatActivity {
     protected static final String ACTIVITY_NAME = "ListItemActivity";
+    private ImageButton image_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_items);
         Log.i(ACTIVITY_NAME, "In onCreate()");
+
+        image_btn = (ImageButton)findViewById(R.id.imageButton);
+
+
+
     }
     protected void onStart(){
         super.onStart();
