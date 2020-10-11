@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == Activity.RESULT_OK){
                 String messagePassed = data.getStringExtra("Response");
                 //String text = "ListItemsActivity passed: My information to share"
-                Toast.makeText(this , "ListItemsActivity passed: "+ messagePassed, Toast.LENGTH_LONG).show(); //this is the ListActivity
+                //ListItemsActivity passed:
+                Toast.makeText(this , getResources().getString(R.string.messagePass)+ messagePassed, Toast.LENGTH_LONG).show(); //this is the ListActivity
                  //display your message box
             }
 

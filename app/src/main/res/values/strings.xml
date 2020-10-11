@@ -13,4 +13,9 @@
     <string name="dialog_title">Activity 3</string>
     <string name="ok">OK</string>
     <string name="cancel">CANCEL</string>
+    <string name="swithOn">Switch is On</string>
+    <string name="swithOff">Switch is Off</string>
+    <string name="responseValue">Here is my response</string>
+    <string name="messagePass">ListItemsActivity passed: </string>
+
 </resources>

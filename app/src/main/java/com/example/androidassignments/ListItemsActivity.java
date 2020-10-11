@@ -54,15 +54,15 @@ public class ListItemsActivity extends AppCompatActivity {
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                CharSequence textOn = "Switch is On";
-                CharSequence textOff = "Switch is Off";
+                //int textOn = R.string.swithOn;
+                //int textOff = R.string.swithOff;
                 int durationOn = Toast.LENGTH_SHORT;
                 if (isChecked==true){
-                    Toast toast = Toast.makeText(getBaseContext() , textOn, durationOn); //this is the ListActivity
+                    Toast toast = Toast.makeText(getBaseContext() , getResources().getString(R.string.swithOn), durationOn); //this is the ListActivity
                     toast.show(); //display your message box
                 }
                 else{
-                    Toast toast = Toast.makeText(getBaseContext() , textOff, durationOn); //this is the ListActivity
+                    Toast toast = Toast.makeText(getBaseContext() , getResources().getString(R.string.swithOff), durationOn); //this is the ListActivity
                     toast.show(); //display your message box
                 }
             }
@@ -79,8 +79,9 @@ public class ListItemsActivity extends AppCompatActivity {
                             .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     // User clicked OK button
+                                    //"Here is my response"
                                     Intent resultIntent = new Intent();
-                                    resultIntent.putExtra("Response", "Here is my response");
+                                    resultIntent.putExtra("Response", getResources().getString(R.string.responseValue));
                                     setResult(Activity.RESULT_OK, resultIntent);
                                     finish();
                                 }
