@@ -9,4 +9,5 @@
     <string name="switch_Text">这是干什么的？</string>
     <string name="Radio_Text">单选键</string>
     <string name="CheckBox_Text">勾选</string>
+    <string name="loginButton_Text">登录</string>
 </resources>
