@@ -9,4 +9,8 @@
     <string name="Radio_Text">RadioButton</string>
     <string name="CheckBox_Text">CheckBox</string>
     <string name="loginButton_Text">Log In</string>
+    <string name="dialog_message">Do you want to exit?</string>
+    <string name="dialog_title">Activity 3</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
 </resources>

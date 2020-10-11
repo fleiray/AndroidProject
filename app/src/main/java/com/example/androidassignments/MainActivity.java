@@ -2,11 +2,13 @@ package com.example.androidassignments;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     protected static final String ACTIVITY_NAME = "MainActivity";
@@ -36,7 +38,16 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode==10)
         {
             Log.i(ACTIVITY_NAME, "Returned to MainActivity.onActivityResult");
+
+            if (resultCode == Activity.RESULT_OK){
+                String messagePassed = data.getStringExtra("Response");
+                //String text = "ListItemsActivity passed: My information to share"
+                Toast.makeText(this , "ListItemsActivity passed: "+ messagePassed, Toast.LENGTH_LONG).show(); //this is the ListActivity
+                 //display your message box
+            }
+
         }
+
     }
 
     protected void onStart(){
