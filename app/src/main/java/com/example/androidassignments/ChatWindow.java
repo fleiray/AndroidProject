@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ChatWindow extends AppCompatActivity {
@@ -34,7 +35,7 @@ public class ChatWindow extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 messageArray.add(messageText.getText().toString());
-                //Arrays.toString(messageArray.toArray());
+                Arrays.toString(messageArray.toArray());
             }
         });
 
