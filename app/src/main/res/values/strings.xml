@@ -17,5 +17,7 @@
     <string name="swithOff">Switch is Off</string>
     <string name="responseValue">Here is my response</string>
     <string name="messagePass">ListItemsActivity passed: </string>
-
+    <string name="chat_button">Start Chat</string>
+    <string name="send_button">Send</string>
+    <string name="message_hint">Enter message in here</string>
 </resources>
