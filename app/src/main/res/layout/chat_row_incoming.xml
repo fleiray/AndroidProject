@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/message_text_in"
+        android:id="@+id/message_text"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_gravity="end"

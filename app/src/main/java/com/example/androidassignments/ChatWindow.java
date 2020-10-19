@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +25,7 @@ public class ChatWindow extends AppCompatActivity {
     private Button sendButton;
     private EditText messageText;
     private ListView messageListView;
-    private ArrayList<String> messageArray;
+    private ArrayList<String> messageArray = new ArrayList<String>();;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class ChatWindow extends AppCompatActivity {
         messageListView = (ListView) findViewById(R.id.MessageList);
         final ChatAdapter messageAdapter = new ChatAdapter(this);
         messageListView.setAdapter(messageAdapter);
-        messageArray = new ArrayList<String>();
+
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,12 +53,12 @@ public class ChatWindow extends AppCompatActivity {
 
    private class ChatAdapter extends ArrayAdapter<String>{
 
-        public ChatAdapter(@NonNull Context context) {
-           super(context, 0);
-
+       public ChatAdapter(@NonNull Context context) {
+            super(context, 0);
        }
 
        public int getCount(){
+
            return messageArray.size();
        }
 
@@ -69,10 +70,11 @@ public class ChatWindow extends AppCompatActivity {
            LayoutInflater inflater = ChatWindow.this.getLayoutInflater();
            View result = null ;
            if(position%2 == 0) {
-               result = inflater.inflate(R.layout.chat_row_incoming, null);
+
+               result = inflater.inflate(R.layout.chat_row_outgoing, null);
            }
            else {
-               result = inflater.inflate(R.layout.chat_row_outgoing, null);
+               result = inflater.inflate(R.layout.chat_row_incoming, null);
            }
            TextView message = (TextView)result.findViewById(R.id.message_text);
            message.setText(getItem(position)); // get the string at position
