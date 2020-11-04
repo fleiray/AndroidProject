@@ -8,19 +8,19 @@
         app:showAsAction="never" />
     <item android:id="@+id/action_one"
         android:title="Choice 1"
-        android:icon="@drawable/add"
+        android:icon="@drawable/add_admin"
         android:orderInCategory="101"
         app:showAsAction="always" />
 
     <item android:id="@+id/action_two"
         android:title="Choice 2"
-        android:icon="@drawable/add"
+        android:icon="@drawable/bookmark"
         android:orderInCategory="101"
         app:showAsAction="always" />
 
     <item android:id="@+id/action_three"
         android:title="Choice 3"
-        android:icon="@drawable/add"
+        android:icon="@drawable/edit"
         android:orderInCategory="101"
         app:showAsAction="always" />
 

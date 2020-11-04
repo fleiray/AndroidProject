@@ -11,6 +11,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.text.Layout;
 import android.util.Log;
@@ -22,7 +23,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class TestToolbar extends AppCompatActivity {
-    private EditText dialogInput;
+
     private String messageText;
 
     @Override
@@ -31,8 +32,9 @@ public class TestToolbar extends AppCompatActivity {
         setContentView(R.layout.activity_test_toolbar);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         messageText="You selected item 1";
-        dialogInput = (EditText)findViewById(R.id.dialogInput_editText);
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,10 +83,13 @@ public class TestToolbar extends AppCompatActivity {
                 LayoutInflater inflater = this.getLayoutInflater();
                 AlertDialog.Builder custombuilder = new AlertDialog.Builder(this);
                 custombuilder.setView(inflater.inflate(R.layout.custom_dialog,null));
+                final EditText dialogInput;
+                dialogInput = findViewById(R.id.dialogInput_editText);
+
                 custombuilder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User clicked OK button
-//                        Log.d("Toolbar", dialogInput.getText().toString());
+                      messageText = dialogInput.getText().toString();
 
                     }
                 });
