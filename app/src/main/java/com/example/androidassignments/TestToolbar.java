@@ -82,14 +82,14 @@ public class TestToolbar extends AppCompatActivity {
             case R.id.action_three:
                 LayoutInflater inflater = this.getLayoutInflater();
                 AlertDialog.Builder custombuilder = new AlertDialog.Builder(this);
-                custombuilder.setView(inflater.inflate(R.layout.custom_dialog,null));
-                final EditText dialogInput;
-                dialogInput = findViewById(R.id.dialogInput_editText);
-
+                final View view = inflater.inflate(R.layout.custom_dialog,null);
+                custombuilder.setView(view);
+                custombuilder.setTitle(getResources().getString(R.string.builder_title));
                 custombuilder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User clicked OK button
-                      messageText = dialogInput.getText().toString();
+                        final EditText dialogInput = view.findViewById(R.id.dialogInput_editText);
+                        messageText = dialogInput.getText().toString();
 
                     }
                 });

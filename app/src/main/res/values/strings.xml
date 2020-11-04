@@ -34,4 +34,5 @@
 
     <string name="toolbar_dialogtitle">Do you want to go back?</string>
     <string name="customDialogHint">Enter new message for Snackbar</string>
+    <string name="builder_title">Custom Dialog</string>
 </resources>

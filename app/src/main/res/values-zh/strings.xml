@@ -36,4 +36,5 @@
     <string name="MYNAME">雷方剑</string>
     <string name="toolbar_dialogtitle">想要返回上一界面吗？</string>
     <string name="customDialogHint">请输入新的消息</string>
+    <string name="builder_title">自制对话框</string>
 </resources>
