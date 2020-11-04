@@ -22,4 +22,18 @@
     <string name="chat_button">开始聊天</string>
     <string name="send_button">发送</string>
     <string name="message_hint">在此输入消息</string>
+
+    <string name="title_activity_test_toolbar">TestToolbar</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="toolbarButton">测试 工具栏</string>
+    <string name="MYNAME">雷方剑</string>
+    <string name="toolbar_dialogtitle">想要返回上一界面吗？</string>
+    <string name="customDialogHint">请输入新的消息</string>
 </resources>
