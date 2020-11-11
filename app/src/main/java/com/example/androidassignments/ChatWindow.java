@@ -3,7 +3,10 @@ package com.example.androidassignments;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -25,30 +29,48 @@ public class ChatWindow extends AppCompatActivity {
     private Button sendButton;
     private EditText messageText;
     private ListView messageListView;
-    private ArrayList<String> messageArray = new ArrayList<String>();;
+    private ArrayList<String> messageArray = new ArrayList<String>();
+    private ChatDatabaseHelper dbHelper;
+    private Cursor cursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_window);
 
+        dbHelper = new ChatDatabaseHelper(this);
+
         sendButton = (Button) findViewById(R.id.sendButton);
         messageText = (EditText) findViewById(R.id.editSendText);
         messageListView = (ListView) findViewById(R.id.MessageList);
         final ChatAdapter messageAdapter = new ChatAdapter(this);
         messageListView.setAdapter(messageAdapter);
+        cursor = dbHelper.getMessages();
+        Log.i(ACTIVITY_NAME, "Cursor’s column count =" + cursor.getColumnCount() + " Column 1's name: " + cursor.getColumnName(0) + " Column 2's name: " + cursor.getColumnName(1));
+        Log.i(ACTIVITY_NAME, cursor.getColumnName(0) + " " + cursor.getColumnName(1) );
 
-
+        if (cursor.moveToFirst()){
+            do{
+                messageArray.add(cursor.getString(cursor.getColumnIndex(dbHelper.KEY_MESSAGE)));
+                Log.i(ACTIVITY_NAME, "SQL MESSAGE:" + cursor.getString(cursor.getColumnIndex(dbHelper.KEY_MESSAGE)));
+            } while(cursor.moveToNext());
+        }
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 messageArray.add(messageText.getText().toString());
                 //Arrays.toString(messageArray.toArray());
                 messageAdapter.notifyDataSetChanged();
+
+                if(dbHelper.addMessage(messageText.getText().toString())){
+                    Toast.makeText(getBaseContext(),"Success",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getBaseContext(),"Faliure",Toast.LENGTH_SHORT).show();
+                }
                 messageText.setText("");
             }
         });
-
     }
 
    private class ChatAdapter extends ArrayAdapter<String>{
@@ -110,5 +132,6 @@ public class ChatWindow extends AppCompatActivity {
     protected void onDestroy(){
         super.onDestroy();
         Log.i(ACTIVITY_NAME, "In onDestroy()");
+        dbHelper.close();
     }
 }
