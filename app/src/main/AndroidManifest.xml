@@ -5,7 +5,7 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <queries>
         <intent>
             <action android:name="android.media.action.IMAGE_CAPTURE" />
@@ -19,11 +19,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".WeatherForecast"></activity>
         <activity
             android:name=".TestToolbar"
             android:label="@string/title_activity_test_toolbar"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".ChatWindow"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ChatWindow" />
         <activity android:name=".ListItemsActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
