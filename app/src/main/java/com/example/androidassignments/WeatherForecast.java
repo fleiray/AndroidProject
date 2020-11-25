@@ -84,7 +84,7 @@ public class WeatherForecast extends AppCompatActivity {
         private String currentTemp;
         private String minTemp;
         private String maxTemp;
-        public Bitmap picture;
+        private Bitmap picture;
         protected String city;
 
         ForecastQuery(String city) {
